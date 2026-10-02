@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChartChallenge</title>
+     <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>CSE 2004 Student Survey</h1>
+    <h2>Year in College</h2>
+    <canvas id="myChart" width="400" height="200"></canvas>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    const ctx = document.getElementById('myChart')
+    const config = {
+        type: 'pie',
+        data: {
+            labels: ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Grad'] ,
+            datasets: [{
+                label: 'Students',
+                data: [0, 11, 21, 19, 2],
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    labels: {
+                        color: 'white'
+                    }
+                }
+            }
+        }
+    }
+    new Chart(ctx, config)
+</script>
+</body>
+</html>
